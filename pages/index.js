@@ -38,7 +38,7 @@ export default function Home({list}) {
 
 
 export async function getServerSideProps(){
-  const res = await fetch(`${process.env.mypageurl}/api/trending`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_mypageurl}/api/trending`);
   const resp = await res.json();
 
   return{

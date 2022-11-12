@@ -3,13 +3,15 @@ import styles from '../styles/Home.module.css'
 import { useState } from 'react';
 import Link from 'next/link';
 
+
+
 export default function Home({list}) {
   const [text,setText] = useState('');
   const [movieList, setMovieList] = useState([]);
 
   const handleSearch = async () => {
     if(text !== ''){
-      const result = await fetch(`${process.env.mypageurl}/api/search?myquery=${text}`);
+      const result = await fetch(`${process.env.NEXT_PUBLIC_mypageurl}/api/search?myquery=${text}`);
       const json = await result.json();
       setMovieList(json.list);
     }
@@ -28,7 +30,7 @@ export default function Home({list}) {
         Busca
         </h1>
 
-<input type='text' value={text} onChange={e=>setText(e.target.value)}></input>
+<input type='text' value={text} onChange={e=>setText(e.target.value)}/>
 termo de busca: {text}
 <button onClick={handleSearch}>Buscar</button>
 <hr />
@@ -51,3 +53,5 @@ termo de busca: {text}
     </div>
   )
 }
+
+
