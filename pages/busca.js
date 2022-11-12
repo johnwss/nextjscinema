@@ -29,7 +29,7 @@ export default function Home({list}) {
         </h1>
 
 <input type='text' value={text} onChange={e=>setText(e.target.value)}></input>
-{/* termo de busca: {text} */}
+termo de busca: {text}
 <button onClick={handleSearch}>Buscar</button>
 <hr />
 
