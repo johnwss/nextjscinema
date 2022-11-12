@@ -9,7 +9,7 @@ export default function Home({list}) {
 
   const handleSearch = async () => {
     if(text !== ''){
-      const result = await fetch(`http://localhost:3000/api/search?myquery=${text}`);
+      const result = await fetch(`${process.env.mypageurl}/api/search?myquery=${text}`);
       const json = await result.json();
       setMovieList(json.list);
     }
